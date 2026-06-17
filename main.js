@@ -255,20 +255,6 @@ const CONFIG = {
     gsap.timeline({ defaults: { ease, duration: 0.9 } })
       .to(heroItems, { y: 0, opacity: 1, stagger: 0.12, delay: 0.15 });
 
-    // Hero parallax — exterior image drifts upward as you scroll past the hero
-    if (window.ScrollTrigger) {
-      gsap.fromTo(
-        ".hero__img",
-        { xPercent: -50, yPercent: -50 },
-        {
-          xPercent: -50,
-          yPercent: -61,
-          ease: "none",
-          scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
-        }
-      );
-    }
-
     // Section reveals
     $$("[data-reveal]").forEach((el) => {
       const targets = el.hasAttribute("data-stagger")
